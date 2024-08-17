@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .first{
+        margin: auto;
+        height: 100px;
+        width: 300px;
+        border: 2px dashed rgb(109, 17, 202); 
+        border-radius: 10px;
+        
+    }
+    input{
+        /* margin-top: 10px;
+        margin-left: 20px; */
+        display: none;
+    }
+    label{
+        
+       position: relative;
+       color: brown;
+       left: 40px;
+       top: 15px;
+        font-size:  25px;
+    }
+    #ashok{
+       margin-left: 540px;
+       height: 100px;
+       width: 200px;
+       border: 1px solid black;
+       border-radius: 10px;
+      gap: 10px;
+      text-align: center;
+      
+
+</style>
+<body>
+    
+        <div class="first">
+            <input type="file" multiple onchange="selectse()" id="file"><br><label for="file">Click here upload files</label>
+        </div>
+        <div id="second"></div>
+        <p id="ram"></p>
+        <script>
+            function selectse(){
+                let text = "";
+               let box= document.getElementById("file").files
+               
+               
+               for (let a=0; a < box.length;a++){
+                let datas =box[a]
+                console.log(datas);
+                // text +="name"+file.name +"<br>"
+                // text +="size"+file.size 
+                text+=`
+                <div id="ashok">
+
+                        <span>Name:</span><span>${datas.name}</span><br>
+                        <span>Size:</span><span>${datas.size}</span><br>
+                        <span>Date:</span><span>${datas.lastModified}</span><br>
+                        
+                    </div>
+`
+               }
+               document.getElementById("ram").innerHTML=text 
+            }
+            // document.getElementById("ram").innerHTML=text
+        </script>
+</body>
+</html>
