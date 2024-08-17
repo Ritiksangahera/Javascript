@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ram{
+            margin-top: 50px;
+            margin-left: 340px;
+            height: 500px;
+            width: 600px;
+            border: 20px solid darkcyan;
+            text-align: center;
+            border-radius: 20px;
+        }
+        input{
+            margin-top: 10px;
+        }
+        @media print{
+          #show{
+            display: none;
+          }
+        }
+        
+    </style>
+</head>
+<body id="bdy">
+  <div id="show">
+    <input type="text" placeholder="Enter Name" name="" id="text">
+    <button onclick="submit()">Submit</button>
+  </div>
+  <div id="ram">
+  <h2>-:Certificate of Completion:-</h2>
+        <h1>The Completion of Web-Development Mastery Course - 2024</h1>
+        <div class="o_detial">
+            <p>Introduced by</p>
+            <p class="o_name" id="oname"><h3>Parjapati..</h3></p>
+            <p class="o_position">(Code/Web Designer)</p>
+          </div>
+          <div class="customer_dettail">
+            <p>Completed by</p>
+            <div class="c_name" id="cname"><h2>//Ritik//</h2></div>
+            <p class="completed_date">
+              Date - <span id="date">12/10/2023</span>
+            </p>
+           
+          </div>
+          <button id="btn" onclick="window.print()">Print</button>
+        </div>
+          <script>
+           
+
+            function submit(){
+              let date = new Date().getDate()
+              let month = new Date().getMonth()+1
+              let year = new Date().getFullYear()
+              let fulldate= document.getElementById("date").innerHTML=`${date}/${month}/${year}`
+                let name =document.getElementById("text").value 
+                let names =document.getElementById("oname").innerHTML=name
+                let namese =document.getElementById("cname").innerHTML=name
+                
+            }
+          </script>
+</body>
+</html>
