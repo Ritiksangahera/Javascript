@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        #banner{
+            width: 50%;
+            height: 320px;
+            border-radius: 10px;
+            text-align: center;
+            margin: auto;
+            border: 1px solid black;
+            background-color: blueviolet;
+            margin-top: 50px;
+            box-shadow: 10px 3px 6px 2px;
+            
+        }
+        h1{
+            color: aqua;
+        }
+            
+        input{
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0px;
+            font-size: 15px;
+        }
+        button{
+            padding: 7px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+     <div id="banner">
+        <h1>Calculator....</h1>
+    <input id="i" type="text" placeholder="enter X"><br>
+    <input id="ii" type="text" placeholder="enter Y"><br>
+    <button onclick="sum()">sum</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="mul()">multiply</button>
+    <button onclick="div()">div</button>
+    <br>
+    <input id="iii" type="text" placeholder="result"><br>
+</div>
+    <script>
+        function sum()
+        {
+            x = parseInt(document.getElementById("i").value)
+        y = parseInt(document.getElementById("ii").value)
+        z = x + y
+        document.getElementById("iii").value=z
+        }
+        function sub()
+        {
+            x = parseInt(document.getElementById("i").value)
+        y = parseInt(document.getElementById("ii").value)
+        z = x - y
+        document.getElementById("iii").value=z
+        }
+        function mul()
+        {
+            x = parseInt(document.getElementById("i").value)
+        y = parseInt(document.getElementById("ii").value)
+        z = x * y
+        document.getElementById("iii").value=z
+        }
+        function div()
+        {
+            x = parseInt(document.getElementById("i").value)
+        y = parseInt(document.getElementById("ii").value)
+        z = x / y
+        document.getElementById("iii").value=z
+        }
+    </script>
+</body>
+</html>
