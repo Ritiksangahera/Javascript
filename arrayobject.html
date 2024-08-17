@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container border mt-3 p-5 rounded">
+    <input type="text" class="form-control mb-2" id="name" placeholder="Name" >
+    <input type="text" class="form-control mb-2" id="class" placeholder="Class" >
+    <input type="text" class="form-control mb-2" id="rollno" placeholder="Rollno" >
+    <button class="btn btn-success" onclick="save()" >Save</button>
+    <button class="btn btn-info text-white" onclick="show()">show</button>
+</div>
+    <table class="table table-hover table-bordered m-3 ">
+        <thead>
+            <tr>
+<th>Name</th>
+<th>Class</th>
+<th>Roll.No</th>
+            </tr>
+        </thead>
+        <tbody id="mytable">
+           
+        </tbody>
+    </table>
+    <script>
+        let arr=[
+            {
+                name:"ankit",
+                class:"bca",
+                rollno:5
+            },
+            {
+                name:"ashok",
+                class:"bca",
+                rollno:6
+            },
+            {
+                name:"dinesh",
+                class:"bca",
+                rollno:7
+            },
+            {
+                name:"pardeep",
+                class:"bca",
+                rollno:8
+            }
+        ]
+        function save(){    
+                   
+             let name=  document.getElementById("name").value
+             let classes =  document.getElementById("class").value
+             let rollno =  document.getElementById("rollno").value
+
+             let obj={
+                name:name,
+                class:classes,
+                rollno:rollno
+             }
+             arr.push(obj)
+        }
+
+        function show() 
+        {
+            document.getElementById("mytable").innerHTML=""
+           
+            arr.forEach(element=>{
+           let mytage = ` <tr>
+                <td>${element.name}</td>
+                <td>${element.class}</td>
+                <td>${element.rollno}</td>
+            </tr>`
+            document.getElementById("mytable").innerHTML +=mytage
+        }) ; 
+        }
+        
+       
+        console.log(arr)
+    </script>
+</body>
+</html>
