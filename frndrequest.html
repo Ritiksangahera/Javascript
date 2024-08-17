@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+    body{
+        background-color: aqua;
+    }
+    #main{
+        height: 400px;
+        width: 300px;
+        background-color: violet;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 50px;
+       
+    }
+    img{
+        height: 200px;
+        width: 250px;
+        margin: 20px;
+    }
+    #cute{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    h3{
+        text-align: center;
+        font-size: 25px;
+        color: rgb(13, 70, 72);
+    }
+    button{
+       margin-left: 50px ;
+       background-color: #fff;
+       border: none;
+       border-radius: 5px;
+       padding: 10px;
+       background-color: burlywood;
+       box-shadow: 2px 3px 3px 4px gray;
+    }
+    i{
+      position: absolute;
+      transition: ease-in-out 0.3s;
+    /* font-size: 40px;
+   color: red;
+   display: none; */
+    }
+   
+</style>
+<body>
+    <div id="main">
+        <div id="cute">
+        <img ondblclick="set()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhxcOh5Vy4ImSImut3oQgVKfg5dpZstzavg&s" alt="" >
+        <i class="fa-regular fa-heart"></i>
+    </div>
+        <h3 id="frnd">Friend</h3>
+        <button onclick="remove()">Remove</button>
+        <button onclick="req()">Request</button>
+    </div>
+    <script>
+function remove(){
+   document.getElementById("frnd").innerHTML="Friend"
+}
+function req(){
+     document.getElementById("frnd").innerHTML="Friendship"
+}
+function set(){
+ let newi=document.querySelector("i")
+ newi.style.fontSize="40px"
+ newi.style.backgroundColor="red"
+
+}
+
+
+
+    </script>
+</body>
+</html>
