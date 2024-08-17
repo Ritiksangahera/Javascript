@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        height: 600px;
+        width: 400px;
+        border: 1px solid black;
+        margin: auto;
+        /* text-align: center; */
+        box-shadow: 2px 1px 12px 5px aqua;
+    }
+    h2{
+        text-align: center;
+        /* text-shadow: 12px 12px 12px 6px grey; */
+    }
+    #colour{
+        height: 350px;
+        width: 350px;
+        border: 1px solid black;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: 1px 9px 10px 2px indianred;
+    }
+    input{
+       height: 30px;
+       width: 300px;
+        margin-top:20px ;
+        margin-left: 45px;
+    }
+    button{
+        height: 40px;
+        width: 250px;
+        margin-top: 20px;
+        margin-left: 67px;
+        box-shadow: 2px 2px 12px 4px green;
+    }
+</style>
+<body>
+    <div id="main">
+        <h2>Color Generator...</h2>
+        <div id="colour">
+
+        </div>
+        <input type="text" placeholder="Enter color" id="text"><br>
+        <button onclick="submit()">SUBMIT</button>
+    </div>
+    <script>
+        function submit(){
+            let a = document.getElementById("text").value 
+            let b = document.getElementById("colour").style.backgroundColor=a 
+        }
+    </script>
+</body>
+</html>
