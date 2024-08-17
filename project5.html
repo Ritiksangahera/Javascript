@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+
+</head>
+<style>
+    #main{
+        display: flex;
+        flex-direction: column;
+        
+        /* margin: auto; */
+    }
+    #newdiv{
+        height: 250px;
+        width: 250px;
+        text-align: center;
+        margin: auto;
+        border: 10px solid burlywood;
+        border-radius: 10px;
+    }
+    input{
+        margin: 5px;
+        padding: 5px ;
+    }
+    button{
+        margin: 5px;
+        padding: 3px 15px;
+        /* background-color: burlywood; */
+        
+    }
+    #div2{
+        margin-top: 10px;
+      margin: auto;
+      
+    }
+</style>
+<body>
+    <div id="main">
+        <div id="newdiv" >
+    <h2>Student Regist...</h2>
+    <input type="text"  id="name" placeholder="Enter Name"><br>
+    <input type="text" id="class" placeholder=" Enter Class"><br>
+    <input type="number" id="roll" placeholder="Enter Roll.No"><br>
+    <button onclick="save()">save</button>
+    <button onclick="show()">show</button>
+</div>
+<div id="div2">
+    <table >
+        <thead >
+            <tr>
+                <th>name</th>
+                <th>class</th>
+                <th>roll</th>
+                <th><button>Delete</button></th>
+                <!-- <th>Updatebtn</th> -->
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </div>
+</div>
+    <script>
+        let arr = []
+        function save() {
+            let mydata = localStorage.getItem("newdata")
+            arr = JSON.parse(mydata)
+            let name = document.getElementById("name").value
+            let classes = document.getElementById("class").value
+            let roll = document.getElementById("roll").value
+
+            if (arr==null) {
+                arr=[]
+            }
+            let obj = {
+                Myname: name,
+                Myclass: classes,
+                Myroll: roll
+            }
+            arr.push(obj)
+            console.log(obj);
+            localStorage.setItem("newdata", JSON.stringify(arr))
+        
+        }
+        function show(){
+            document.getElementById("tbody").innerHTML=""
+
+          let mydata=  localStorage.getItem("newdata")
+          let againdata=JSON.parse(mydata)
+
+          againdata.forEach((element,index )=> {
+            let table =` <td>${element.Myname}</td>
+                <td>${element.Myclass}</td>
+                <td>${element.Myroll}</td>
+                <td><button onclick="del(${index})">delete</button></td>`
+                // <td><button onclick="updates(${index})">update</button></td>`
+                document.getElementById("tbody").innerHTML+=table
+          });
+        }
+        function del(id){
+           let data1= localStorage.getItem("newdata")
+           let newarr=JSON.parse(data1)
+           newarr.splice(id,1)
+            localStorage.setItem("newdata",JSON.stringify(newarr))
+            show()
+        
+        }
+        // function updates(id){
+        //   let data3 =localStorage.getItem("newdata")
+        //   let myarr=JSON.parse(data3)
+        //     myarr.splice(id,1,
+        //     {
+        //         Myname: "Ankush",
+        //         Myclass: "BCA",
+        //         Myroll: "00001"  
+        //     })
+        //     localStorage.setItem("newdata",JSON.stringify(myarr))
+        //     show()
+        // // alert("Do you want to update this name")
+       
+        // }
+
+    </script>
+</body>
+
+</html>
+
+</body>
+</html>
