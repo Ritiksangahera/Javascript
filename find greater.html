@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        #ram{
+            height: 340px;
+            width: 300px;
+            border: 1px solid black;
+            border-radius: 18px;
+            text-align: center;
+            margin:auto ;
+            margin-top: 30px;
+            background-color: cyan;
+        }
+        input{
+            padding: 10px 40px;
+            border-bottom: 2px solid black;
+           
+        }
+    </style>
+    <body>
+        <div id="ram">
+            <h2>Find greater.. <br> App</h2>
+            <input placeholder="Enter first value" id="textone" type="text"><br><br>
+            <input placeholder="Enter second value" id="texttwo" type="text"><br><br>
+            <button onclick="change()">Change</button>
+            <h2 id="result">Result</h2>
+        </div>
+        <script>
+            function change()
+            {
+                x=parseInt (document.getElementById("textone").value )
+                y=parseInt (document.getElementById("texttwo").value)
+                
+                if(x>y)
+                document.getElementById("result").innerHTML=`${x} is greater`
+                else
+                document.getElementById("result").innerHTML= `${y} is greater`
+
+            }
+        </script>
+    </body>
+    </html>
+</body>
+</html>
